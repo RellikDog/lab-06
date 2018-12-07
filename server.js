@@ -12,8 +12,13 @@ app.use(express.static('./public'));
 app.get('/hello', (request, response) =>{
   response.status(200).send('hello');
 })
+//get location
+app.get('/location', (request, response) => {
+  const locationData = searchToLatLong(request.query.data || 'Lynnwood, WA');
+});
 
-app.use('*', (req, res) =>{
+//errors
+app.use('/*', (req, res) =>{
   res.status(400).send(`sorry that didn't work`);
 })
 
