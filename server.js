@@ -55,8 +55,8 @@ function searchWeather(query){
   return(allWeather);
 }
 function Weather(day){
-  this.forcast = day.summary;
-  this.time = new Date (day.time * 1000).toGMTString();
+  this.forecast = day.summary;
+  this.time = new Date (day.time * 1000).toDateString();
   allWeather.push(this);
 }
 //errors
